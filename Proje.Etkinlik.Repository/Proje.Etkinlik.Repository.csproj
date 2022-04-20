@@ -48,6 +48,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Kategori.cs" />
+    <Compile Include="Mekan.cs" />
+    <Compile Include="Sahne.cs" />
+    <Compile Include="Sanatci.cs" />
+    <Compile Include="Sehir.cs" />
+    <Compile Include="AltKategori.cs" />
+    <Compile Include="Etkinlik.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

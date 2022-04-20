@@ -281,7 +281,6 @@
     <Content Include="Views\partials\_footer.html" />
     <Content Include="Views\partials\_navbar.html" />
     <Content Include="Views\Public\Default.aspx" />
-    <Content Include="Views\User\snvDeneme.aspx" />
     <Content Include="Views\User\UpdateInsert.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -317,13 +316,6 @@
     </Compile>
     <Compile Include="Views\Public\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\User\snvDeneme.aspx.cs">
-      <DependentUpon>snvDeneme.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\User\snvDeneme.aspx.designer.cs">
-      <DependentUpon>snvDeneme.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\User\UpdateInsert.aspx.cs">
       <DependentUpon>UpdateInsert.aspx</DependentUpon>
