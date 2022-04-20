@@ -7,10 +7,14 @@ using System.Web.UI.WebControls;
 
 namespace ProjeEtkinlik.Views
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class Site1 : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Kullanici"] != null)
+            {
+                label_kullanici.InnerText ="Hoşgeldin " + Session["Kullanici"].ToString();
+            }
 
         }
     }

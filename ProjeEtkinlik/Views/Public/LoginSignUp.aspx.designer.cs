@@ -42,6 +42,42 @@ namespace ProjeEtkinlik.Views
         protected global::System.Web.UI.WebControls.Button girisyap;
 
         /// <summary>
+        /// uyeol_adsoyad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText uyeol_adsoyad;
+
+        /// <summary>
+        /// uyeol_email control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText uyeol_email;
+
+        /// <summary>
+        /// uyeol_sifre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText uyeol_sifre;
+
+        /// <summary>
+        /// uyeol_sifre2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText uyeol_sifre2;
+
+        /// <summary>
         /// uyeOl control.
         /// </summary>
         /// <remarks>

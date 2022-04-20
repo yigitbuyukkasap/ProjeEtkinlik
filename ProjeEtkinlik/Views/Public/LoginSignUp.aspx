@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Site1.Master" AutoEventWireup="true" CodeBehind="LoginSignUp.aspx.cs" Inherits="ProjeEtkinlik.Views.LoginSignUp" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/MasterPage/Site1.Master" AutoEventWireup="true" CodeBehind="LoginSignUp.aspx.cs" Inherits="ProjeEtkinlik.Views.LoginSignUp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -16,10 +16,10 @@
             </div>
           </div>
         </div>
+              <form method="post" runat="server">
         <div class="contact-wrap">
           <div class="row">
             <div class="col-lg-6  mb-5 mb-sm-2">
-              <form>
                   <h1>Giriş Yap</h1>
 
                 <div class="row">
@@ -59,17 +59,14 @@
                   <div class="col-sm-12">
                     <div class="form-group">
                         <asp:Button ID="girisyap" class="btn btn-lg btn-dark font-weight-bold" runat="server" Text="Giriş Yap" OnClick="girisyap_Click" />
-                      
                     </div>
                   </div>
                 </div>
-              </form>
             </div>
             <div class="col-lg-6 mb-2 mb-lg-2">
               <div class="contact-right-padding">
                 <div class="row">
                   <div class="col-sm-12  mb-2 mb-lg-2">
-                    <form>
                   <h1>Üye Ol</h1>
 
                 <div class="row">
@@ -77,9 +74,10 @@
                     <div class="form-group">
                       <input
                         type="text"
+                        runat="server"
                         class="form-control"
-                        id="adsoyad"
-                        aria-describedby="adsoyad"
+                        id="uyeol_adsoyad"
+                        aria-describedby="uyeol_adsoyad"
                         placeholder="Ad Soyad"
                       />
                     </div>
@@ -91,8 +89,9 @@
                     <div class="form-group">
                       <input
                         type="text"
+                          runat="server"
                         class="form-control"
-                        id="email"
+                        id="uyeol_email"
                         aria-describedby="email"
                         placeholder="E-Mail"
                       />
@@ -107,7 +106,8 @@
                       <input
                         type="text"
                         class="form-control"
-                        id="sifre"
+                        id="uyeol_sifre"
+                          runat="server"
                         aria-describedby="sifre"
                         placeholder="Şifre"
                       />
@@ -123,7 +123,8 @@
                       <input
                         type="text"
                         class="form-control"
-                        id="sifre2"
+                        id="uyeol_sifre2"
+                          runat="server"
                         aria-describedby="sifre"
                         placeholder="Şifre"
                       />
@@ -135,7 +136,7 @@
                 <div class="row">
                   <div class="col-sm-12">
                     <div class="form-group">
-                      <asp:Button ID="uyeOl" class="btn btn-lg btn-dark font-weight-bold" runat="server" Text="Üye Ol" />
+                      <asp:Button ID="uyeOl" class="btn btn-lg btn-dark font-weight-bold" runat="server" Text="Üye Ol" OnClick="uyeOl_Click" />
                     </div>
                   </div>
                 </div>
