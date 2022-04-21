@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Menu.cs" />
     <Compile Include="Kategori.cs" />
     <Compile Include="Mekan.cs" />
     <Compile Include="Sahne.cs" />
