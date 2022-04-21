@@ -1,4 +1,5 @@
 ﻿using Proje.Etkinlik.Data;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Proje.Etkinlik.Repository
@@ -6,6 +7,11 @@ namespace Proje.Etkinlik.Repository
     public class Menu
     {
         Proje_EtkinlikEntities entities = new Proje_EtkinlikEntities();
+
+        public IList<Menu> GetByRole(string role)
+        {
+            return (IList<Menu>)entities.Menu.Where(m => m.Yetki == role);
+        }
 
         public int Ekle(Data.Menu obj)
         {
