@@ -55,17 +55,10 @@ namespace Proje.Etkinlik.Repository
             return returnValue;
         }
 
-        public int GirisYap(Data.Uye yeniUye)
+        public Uye GirisYap(Data.Uye yeniUye)
         {
-            var anyCount = entities.Uye.Where(p => p.Email == yeniUye.Email && p.Sifre == yeniUye.Sifre).FirstOrDefault();
-            if (anyCount != null)
-            {
-                return 1;
-            }
-            else
-            {
-                return 0;
-            }
+            var obj = entities.Uye.Where(p => p.Email == yeniUye.Email && p.Sifre == yeniUye.Sifre).FirstOrDefault();
+            return obj;
         }
 
     }

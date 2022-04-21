@@ -10,7 +10,7 @@ namespace Proje.Etkinlik.Repository
 
         public List<Data.Menu> GetByRole(string role)
         {
-            return entities.Menu.Where(m => m.Yetki == role).ToList();
+            return entities.Menu.Where(m => m.Yetki.Contains(role)).ToList();
         }
 
         public int Ekle(Data.Menu obj)

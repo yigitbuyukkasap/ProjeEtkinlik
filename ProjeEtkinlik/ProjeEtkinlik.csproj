@@ -332,6 +332,7 @@
     <Compile Include="Views\User\UpdateInsert.aspx.designer.cs">
       <DependentUpon>UpdateInsert.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebConst.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -459,6 +460,8 @@
           <DevelopmentServerPort>57866</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44318/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>https://localhost:44318/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

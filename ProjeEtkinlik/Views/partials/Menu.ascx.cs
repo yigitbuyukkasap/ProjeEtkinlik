@@ -11,15 +11,15 @@ namespace ProjeEtkinlik.Views.partials
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string usedRole = WebConst.PublicRole;
             var role = (Proje.Etkinlik.Data.Uye)System.Web.HttpContext.Current.Session["User"];
             if (role != null)
-            {
-                var menu = new Proje.Etkinlik.Repository
-                            .Menu()
-                            .GetByRole(role.Yetki).ToList();
-                if (menu != null) ListingMenu(menu);
-            }
+                usedRole = role.Yetki;
+
+            var menu = new Proje.Etkinlik.Repository
+                        .Menu()
+                        .GetByRole(usedRole).ToList();
+            ListingMenu(menu);
         }
 
         private void ListingMenu(List<Proje.Etkinlik.Data.Menu> menu)
@@ -29,7 +29,7 @@ namespace ProjeEtkinlik.Views.partials
             for (int i = 0; i < menu.Count; i++)
             {
                 str += "<li class='nav-item'>";
-                str += "<a class='nav-link' href='" + menu[i].MenuAdres + "'> '" + menu[i].MenuAd + "' </a>";
+                str += "<a class='nav-link' href='" + menu[i].MenuAdres + "'> " + menu[i].MenuAd + " </a>";
                 str += "</li>";
             }
             lt_menu.Text += str;

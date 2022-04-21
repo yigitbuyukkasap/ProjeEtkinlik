@@ -10,6 +10,7 @@ namespace ProjeEtkinlik.Views
 {
     public partial class LoginSignUp : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -23,17 +24,14 @@ namespace ProjeEtkinlik.Views
             uyeEntity.Email = email.Value;
             uyeEntity.Sifre = sifre.Value;
             var kontrol = login.GirisYap(uyeEntity);
-            if (kontrol == 1)
+            if (kontrol != null)
             {
-                Session["Kullanici"] = uyeEntity.Email;
+                Session["User"] = kontrol;
                 Response.Redirect("Default.aspx");
             }
             else
             {
-               /* Bildirim asdf = new Bildirim();
-                asdf.Yazdir();*/
-                
-                // üye yok
+
             }
         }
 
