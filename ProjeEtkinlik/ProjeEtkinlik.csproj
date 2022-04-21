@@ -276,6 +276,7 @@
     <Content Include="Views\assets\vendors\owl.carousel\dist\assets\owl.carousel.min.css" />
     <Content Include="Views\assets\vendors\owl.carousel\dist\assets\owl.theme.default.min.css" />
     <Content Include="Views\assets\vendors\owl.carousel\dist\owl.carousel.min.js" />
+    <Content Include="Views\partials\Menu.ascx" />
     <Content Include="Views\Public\LoginSignUp.aspx" />
     <Content Include="Views\partials\Bildirim.ascx" />
     <Content Include="Views\partials\_footer.html" />
@@ -289,6 +290,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\partials\Menu.ascx.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\partials\Menu.ascx.designer.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Public\LoginSignUp.aspx.cs">
       <DependentUpon>LoginSignUp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

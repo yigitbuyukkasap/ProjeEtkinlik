@@ -49,6 +49,15 @@ warning 6013: The table/view 'Proje_Etkinlik.dbo.BiletSatisLink' does not have a
           <Property Name="MekanFoto" Type="nvarchar(max)" />
           <Property Name="MekanSehir" Type="int" />
         </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="MenuAd" Type="nchar" MaxLength="40" />
+          <Property Name="Yetki" Type="nchar" MaxLength="20" />
+          <Property Name="MenuAdres" Type="nchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="Sahne">
           <Key>
             <PropertyRef Name="id" />
@@ -94,6 +103,7 @@ warning 6013: The table/view 'Proje_Etkinlik.dbo.BiletSatisLink' does not have a
           <Property Name="Yas" Type="int" />
           <Property Name="Email" Type="nchar" MaxLength="50" />
           <Property Name="Sifre" Type="nchar" MaxLength="40" />
+          <Property Name="Yetki" Type="nchar" MaxLength="10" />
         </EntityType>
         <Association Name="FK_AltKategori_Kategori">
           <End Role="Kategori" Type="Self.Kategori" Multiplicity="0..1" />
@@ -215,6 +225,7 @@ warning 6013: The table/view 'Proje_Etkinlik.dbo.BiletSatisLink' does not have a
           <EntitySet Name="Etkinlik" EntityType="Self.Etkinlik" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kategori" EntityType="Self.Kategori" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Mekan" EntityType="Self.Mekan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sahne" EntityType="Self.Sahne" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sanatci" EntityType="Self.Sanatci" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sehir" EntityType="Self.Sehir" Schema="dbo" store:Type="Tables" />
@@ -477,6 +488,7 @@ warning 6013: The table/view 'Proje_Etkinlik.dbo.BiletSatisLink' does not have a
             <End Role="Sehir" EntitySet="Sehir" />
             <End Role="Uye" EntitySet="Uye" />
           </AssociationSet>
+          <EntitySet Name="Menu" EntityType="Proje_EtkinlikModel.Menu" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -501,6 +513,7 @@ warning 6013: The table/view 'Proje_Etkinlik.dbo.BiletSatisLink' does not have a
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="Sifre" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Sehir" Relationship="Proje_EtkinlikModel.FK_Uye_Sehir" FromRole="Uye" ToRole="Sehir" />
+          <Property Name="Yetki" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <Association Name="FK_Uye_Sehir">
           <End Type="Proje_EtkinlikModel.Sehir" Role="Sehir" Multiplicity="0..1" />
@@ -514,6 +527,15 @@ warning 6013: The table/view 'Proje_Etkinlik.dbo.BiletSatisLink' does not have a
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="MenuAd" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="Yetki" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="MenuAdres" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -626,12 +648,23 @@ warning 6013: The table/view 'Proje_Etkinlik.dbo.BiletSatisLink' does not have a
           <EntitySetMapping Name="Uye">
             <EntityTypeMapping TypeName="Proje_EtkinlikModel.Uye">
               <MappingFragment StoreEntitySet="Uye">
+                <ScalarProperty Name="Yetki" ColumnName="Yetki" />
                 <ScalarProperty Name="Sifre" ColumnName="Sifre" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Yas" ColumnName="Yas" />
                 <ScalarProperty Name="Telefon" ColumnName="Telefon" />
                 <ScalarProperty Name="SehirId" ColumnName="SehirId" />
                 <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menu">
+            <EntityTypeMapping TypeName="Proje_EtkinlikModel.Menu">
+              <MappingFragment StoreEntitySet="Menu">
+                <ScalarProperty Name="MenuAdres" ColumnName="MenuAdres" />
+                <ScalarProperty Name="Yetki" ColumnName="Yetki" />
+                <ScalarProperty Name="MenuAd" ColumnName="MenuAd" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

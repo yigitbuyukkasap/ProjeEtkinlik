@@ -21,6 +21,7 @@
         <AssociationConnector Association="Proje_EtkinlikModel.FK_Sahne_Mekan" ManuallyRouted="false" />
         <EntityTypeShape EntityType="Proje_EtkinlikModel.Uye" Width="1.5" PointX="3" PointY="7.5" />
         <AssociationConnector Association="Proje_EtkinlikModel.FK_Uye_Sehir" />
+        <EntityTypeShape EntityType="Proje_EtkinlikModel.Menu" Width="1.5" PointX="6.375" PointY="1.25" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
