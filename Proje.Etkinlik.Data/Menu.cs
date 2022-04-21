@@ -16,7 +16,7 @@ namespace Proje.Etkinlik.Data
     {
         public int id { get; set; }
         public string MenuAd { get; set; }
-        public string Yetki { get; set; }
         public string MenuAdres { get; set; }
+        public string Yetki { get; set; }
     }
 }

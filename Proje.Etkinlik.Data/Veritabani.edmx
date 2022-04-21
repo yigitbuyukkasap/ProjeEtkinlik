@@ -53,10 +53,10 @@ warning 6013: The table/view 'Proje_Etkinlik.dbo.BiletSatisLink' does not have a
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="MenuAd" Type="nchar" MaxLength="40" />
-          <Property Name="Yetki" Type="nchar" MaxLength="20" />
-          <Property Name="MenuAdres" Type="nchar" MaxLength="100" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MenuAd" Type="nchar" MaxLength="30" />
+          <Property Name="MenuAdres" Type="nchar" MaxLength="50" />
+          <Property Name="Yetki" Type="nchar" MaxLength="15" />
         </EntityType>
         <EntityType Name="Sahne">
           <Key>
@@ -531,10 +531,10 @@ warning 6013: The table/view 'Proje_Etkinlik.dbo.BiletSatisLink' does not have a
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="MenuAd" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
-          <Property Name="Yetki" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="MenuAdres" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MenuAd" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="MenuAdres" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Yetki" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -662,8 +662,8 @@ warning 6013: The table/view 'Proje_Etkinlik.dbo.BiletSatisLink' does not have a
           <EntitySetMapping Name="Menu">
             <EntityTypeMapping TypeName="Proje_EtkinlikModel.Menu">
               <MappingFragment StoreEntitySet="Menu">
-                <ScalarProperty Name="MenuAdres" ColumnName="MenuAdres" />
                 <ScalarProperty Name="Yetki" ColumnName="Yetki" />
+                <ScalarProperty Name="MenuAdres" ColumnName="MenuAdres" />
                 <ScalarProperty Name="MenuAd" ColumnName="MenuAd" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>

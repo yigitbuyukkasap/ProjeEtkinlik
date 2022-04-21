@@ -8,9 +8,9 @@ namespace Proje.Etkinlik.Repository
     {
         Proje_EtkinlikEntities entities = new Proje_EtkinlikEntities();
 
-        public IList<Menu> GetByRole(string role)
+        public List<Data.Menu> GetByRole(string role)
         {
-            return (IList<Menu>)entities.Menu.Where(m => m.Yetki == role);
+            return entities.Menu.Where(m => m.Yetki == role).ToList();
         }
 
         public int Ekle(Data.Menu obj)
