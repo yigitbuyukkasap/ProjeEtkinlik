@@ -16,7 +16,7 @@ namespace ProjeEtkinlik.Views.User
             if (!IsPostBack)
             {
 
-            string email = Session["Kullanici"].ToString();
+            string email = Session["User"].ToString();
             var uye = userRepo.UyeBilgileri(email);
             txt_adsoyad.Value = uye.AdSoyad;
             txt_telefon.Value = uye.Telefon;

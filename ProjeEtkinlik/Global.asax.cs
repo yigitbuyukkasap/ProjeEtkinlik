@@ -15,7 +15,17 @@ namespace ProjeEtkinlik
             routes.MapPageRoute(
                 "AnaSayfa",
                 "AnaSayfa",
-                "~/Default.aspx"
+                "~/Views/Public/Default.aspx"
+            );
+            routes.MapPageRoute(
+                "GirisYap",
+                "GirisYap",
+                "~/Views/Public/LoginSignUp.aspx"
+            );
+            routes.MapPageRoute(
+                "Profilim",
+                "Profilim",
+                "~/Views/User/UpdateInsert.aspx"
             );
         }
         protected void Application_Start(object sender, EventArgs e)
