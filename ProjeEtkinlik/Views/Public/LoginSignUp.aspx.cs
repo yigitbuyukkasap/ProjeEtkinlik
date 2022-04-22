@@ -27,7 +27,7 @@ namespace ProjeEtkinlik.Views
             if (kontrol != null)
             {
                 Session["User"] = kontrol;
-                Response.Redirect("Default.aspx");
+                Response.Redirect("AnaSayfa");
             }
             else
             {

@@ -23,6 +23,11 @@ namespace ProjeEtkinlik
                 "~/Views/Public/LoginSignUp.aspx"
             );
             routes.MapPageRoute(
+                "UyeOl",
+                "UyeOl",
+                "~/Views/Public/LoginSignUp.aspx"
+            );
+            routes.MapPageRoute(
                 "Profilim",
                 "Profilim",
                 "~/Views/User/UpdateInsert.aspx"
