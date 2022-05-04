@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace ProjeEtkinlik.Views.User
 {
+    [AuthCheck("User")]
     public partial class UpdateInsert : System.Web.UI.Page
     {
         Proje.Etkinlik.Data.Uye uyeEntity = new Proje.Etkinlik.Data.Uye();

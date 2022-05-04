@@ -32,6 +32,11 @@ namespace ProjeEtkinlik
                 "Profilim",
                 "~/Views/User/UpdateInsert.aspx"
             );
+            routes.MapPageRoute(
+                "SifremiUnuttum",
+                "SifremiUnuttum",
+                "~/Views/Public/ForgetPssw.aspx"
+            );
         }
         protected void Application_Start(object sender, EventArgs e)
         {

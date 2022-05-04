@@ -19,7 +19,10 @@ namespace ProjeEtkinlik.Views.partials
             var menu = new Proje.Etkinlik.Repository
                         .Menu()
                         .GetByRole(usedRole).ToList();
-            ListingMenu(menu);
+            if (menu != null)
+            {
+                ListingMenu(menu);
+            }
         }
 
         private void ListingMenu(List<Proje.Etkinlik.Data.Menu> menu)

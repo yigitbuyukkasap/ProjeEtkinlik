@@ -22,7 +22,7 @@ namespace Proje.Etkinlik.Repository
 
         public void Duzenle(Data.Menu obj)
         {
-            var ent = entities.Menu.Where(p => p.id ==  obj.id).FirstOrDefault();
+            var ent = entities.Menu.Where(p => p.id == obj.id).FirstOrDefault();
             ent = obj;
             var sonuc = entities.SaveChanges();
 
