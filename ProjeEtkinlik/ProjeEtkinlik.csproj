@@ -277,7 +277,6 @@
     <Content Include="Views\partials\Menu.ascx" />
     <Content Include="Views\Public\ForgetPassw.aspx" />
     <Content Include="Views\Public\LoginSignUp.aspx" />
-    <Content Include="Views\partials\Bildirim.ascx" />
     <Content Include="Views\partials\_footer.html" />
     <Content Include="Views\partials\_navbar.html" />
     <Content Include="Views\Public\Default.aspx" />
@@ -310,13 +309,6 @@
     </Compile>
     <Compile Include="Views\Public\LoginSignUp.aspx.designer.cs">
       <DependentUpon>LoginSignUp.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\partials\Bildirim.ascx.cs">
-      <DependentUpon>Bildirim.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\partials\Bildirim.ascx.designer.cs">
-      <DependentUpon>Bildirim.ascx</DependentUpon>
     </Compile>
     <Compile Include="Views\MasterPage\Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
