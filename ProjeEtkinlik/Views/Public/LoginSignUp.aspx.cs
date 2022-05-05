@@ -1,38 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using Newtonsoft.Json;
+using System;
+using System.Net.Http;
 
 namespace ProjeEtkinlik.Views
 {
     public partial class LoginSignUp : System.Web.UI.Page
     {
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
+        public class Login
+        {
+            public string email { get; set; }
+            public string sifre { get; set; }
+        }
         protected void girisyap_Click(object sender, EventArgs e)
         {
-
-            Proje.Etkinlik.Repository.User login = new Proje.Etkinlik.Repository.User();
-            Proje.Etkinlik.Data.Uye uyeEntity= new Proje.Etkinlik.Data.Uye();
-            uyeEntity.Email = email.Value;
-            uyeEntity.Sifre = sifre.Value;
-            var kontrol = login.GirisYap(uyeEntity);
-            if (kontrol != null)
+            var login = new Login
             {
-                Session["User"] = kontrol;
+                email = email.Value,
+                sifre = sifre.Value,
+            };
+            ApiHttpRequests httpRequest = new ApiHttpRequests();
+            var rp = httpRequest.HttpPostRequest("user/login", login);
+
+            if (rp != null)
+            {
+                Session["User"] = JsonConvert.DeserializeObject<Proje.Etkinlik.Data.Uye>(rp.Result.ToString());
                 Response.Redirect("AnaSayfa");
             }
-            else
-            {
 
-            }
         }
+
+
 
         protected void uyeOl_Click(object sender, EventArgs e)
         {
@@ -41,7 +44,17 @@ namespace ProjeEtkinlik.Views
             uyeEntity.AdSoyad = uyeol_adsoyad.Value;
             uyeEntity.Email = uyeol_email.Value;
             uyeEntity.Sifre = uyeol_sifre.Value;
-            login.UyeOl(uyeEntity);
+
+            ApiHttpRequests httpRequest = new ApiHttpRequests();
+            var rp = httpRequest.HttpPostRequest("user/register", uyeEntity);
+
+            if (rp != null)
+            {
+                 var x = JsonConvert.DeserializeObject<int>(rp.Result.ToString());
+                Response.Redirect("AnaSayfa");
+            }
         }
+
+
     }
 }

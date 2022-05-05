@@ -11,10 +11,7 @@ namespace ProjeEtkinlik.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Kullanici"] != null)
-            {
-                label_kullanici.InnerText ="Hoşgeldin " + Session["Kullanici"].ToString();
-            }
+            
 
         }
     }

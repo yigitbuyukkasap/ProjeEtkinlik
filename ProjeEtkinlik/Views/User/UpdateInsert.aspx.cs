@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,9 @@ namespace ProjeEtkinlik.Views.User
 {
 
 
-    public partial class UpdateInsert :AuthCheck
+    public partial class UpdateInsert : AuthCheck
     {
-        
+
         Proje.Etkinlik.Data.Uye uyeEntity = new Proje.Etkinlik.Data.Uye();
         Proje.Etkinlik.Repository.User userRepo = new Proje.Etkinlik.Repository.User();
 
@@ -34,7 +35,9 @@ namespace ProjeEtkinlik.Views.User
             uyeEntity.Telefon = txt_telefon.Value;
             uyeEntity.Email = txt_email.Value;
             uyeEntity.Sifre = txt_sifre.Value;
-            userRepo.UyeDuzenle(uyeEntity);
+
+            ApiHttpRequests httpRequest = new ApiHttpRequests();
+            var rp = httpRequest.HttpPutRequest("user/edituser", uyeEntity);
         }
         protected void sil_Click(object sender, EventArgs e)
         {

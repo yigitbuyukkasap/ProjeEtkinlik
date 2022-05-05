@@ -1,9 +1,6 @@
 ﻿using Proje.Etkinlik.Data;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace Proje.Etkinlik.API.Controllers
@@ -43,24 +40,24 @@ namespace Proje.Etkinlik.API.Controllers
                 return "0";
             }
         }
-        [Route("user/edituser/{uye}")]
+        [Route("user/edituser")]
         [HttpPut]
-        public void UyeDuzenle(Data.Uye uye)
+        public bool UyeDuzenle(Data.Uye uye)
         {
             var user = entities.Uye.Where(p => p.Email == uye.Email).FirstOrDefault();
             user = uye;
             var sonuc = entities.SaveChanges();
             if (sonuc == 1)
             {
-                //
+                return true;
             }
             else
             {
-
+                return false;
             }
         }
 
-        [Route("user/register/")]
+        [Route("user/register")]
         [HttpPost]
         public int UyeOl([FromBody]Data.Uye yeniUye)
         {
@@ -69,7 +66,7 @@ namespace Proje.Etkinlik.API.Controllers
             return returnValue;
         }
         [Route("user/login")]
-        [HttpGet]
+        [HttpPost]
         public Uye GirisYap([FromBody] Login login )
         {
             var obj = entities.Uye.Where(p => p.Email == login.email&& p.Sifre == login.sifre).FirstOrDefault();
