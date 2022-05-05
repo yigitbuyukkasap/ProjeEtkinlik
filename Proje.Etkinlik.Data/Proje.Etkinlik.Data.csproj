@@ -122,6 +122,7 @@
       <LastGenOutput>Veritabani.Context.cs</LastGenOutput>
       <DependentUpon>Veritabani.edmx</DependentUpon>
     </Content>
+    <Content Include="Veritabani.edmx.sql" />
     <Content Include="Veritabani.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Veritabani.edmx</DependentUpon>

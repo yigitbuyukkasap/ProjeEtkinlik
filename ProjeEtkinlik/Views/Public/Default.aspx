@@ -13,7 +13,7 @@
               <div class="col-lg-3 col-sm-6 grid-margin mb-5 mb-sm-2">
                 <div class="position-relative image-hover">
                   <img
-                    src="../assets/images/dashboard/travel.jpg"
+                    src="<%=ResolveUrl("../assets/images/dashboard/travel.jpg")%>"
                     class="img-fluid"
                     alt="world-news"
                   />
@@ -32,7 +32,7 @@
               <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
                 <div class="position-relative image-hover">
                   <img
-                    src="../assets/images/dashboard/news.jpg"
+                    src="<%=ResolveUrl("../assets/images/dashboard/news.jpg")%>"
                     class="img-fluid"
                     alt="world-news"
                   />
@@ -51,7 +51,7 @@
               <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
                 <div class="position-relative image-hover">
                   <img
-                    src="../assets/images/dashboard/art.jpg"
+                    src="<%=ResolveUrl("../assets/images/dashboard/art.jpg")%>"
                     class="img-fluid"
                     alt="world-news"
                   />
@@ -70,7 +70,7 @@
               <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
                 <div class="position-relative image-hover">
                   <img
-                    src="../assets/images/dashboard/business.jpg"
+                    src="<%=ResolveUrl("../assets/images/dashboard/business.jpg")%>"
                     class="img-fluid"
                     alt="world-news"
                   />

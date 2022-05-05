@@ -1,7 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ProjeEtkinlik.Views.Site1" %>
 
-<%@ Register Src="~/Views/partials/Bildirim.ascx" TagPrefix="uc1" TagName="Bildirim" %>
 <%@ Register Src="~/Views/partials/Menu.ascx" TagPrefix="uc1" TagName="Menu" %>
+
+
 
 
 <asp:ContentPlaceHolder ID="head" runat="server">
@@ -101,7 +102,7 @@
                                 class="navbar-collapse justify-content-center collapse"
                                 id="navbarSupportedContent">
                                 <ul class="navbar-nav d-lg-flex justify-content-between align-items-center">
-                                    <uc1:Menu runat="server" id="Menu" />
+                                    <uc1:Menu runat="server" ID="Menu" />
                                 </ul>
                             </div>
                         </div>
@@ -111,7 +112,6 @@
                 </div>
             </header>
             <div class="container">
-                <uc1:Bildirim runat="server" ID="Bildirim" />
                 <div class="world-news">
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
