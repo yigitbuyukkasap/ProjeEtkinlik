@@ -4,225 +4,209 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Proje_EtkinlikModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="Proje_EtkinlikModelStoreContainer">
-    <EntitySet Name="AltKategori" EntityType="Proje_EtkinlikModel.Store.AltKategori" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Etkinlik" EntityType="Proje_EtkinlikModel.Store.Etkinlik" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Kategori" EntityType="Proje_EtkinlikModel.Store.Kategori" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Mekan" EntityType="Proje_EtkinlikModel.Store.Mekan" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Sahne" EntityType="Proje_EtkinlikModel.Store.Sahne" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Sanatci" EntityType="Proje_EtkinlikModel.Store.Sanatci" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Sehir" EntityType="Proje_EtkinlikModel.Store.Sehir" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="sysdiagrams" EntityType="Proje_EtkinlikModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Uye" EntityType="Proje_EtkinlikModel.Store.Uye" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Menu" EntityType="Proje_EtkinlikModel.Store.Menu" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FK_AltKategori_Kategori" Association="Proje_EtkinlikModel.Store.FK_AltKategori_Kategori">
-      <End Role="Kategori" EntitySet="Kategori" />
-      <End Role="AltKategori" EntitySet="AltKategori" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Etkinlik_AltKategori" Association="Proje_EtkinlikModel.Store.FK_Etkinlik_AltKategori">
-      <End Role="AltKategori" EntitySet="AltKategori" />
-      <End Role="Etkinlik" EntitySet="Etkinlik" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Etkinlik_Mekan" Association="Proje_EtkinlikModel.Store.FK_Etkinlik_Mekan">
-      <End Role="Mekan" EntitySet="Mekan" />
-      <End Role="Etkinlik" EntitySet="Etkinlik" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Etkinlik_Sanatci" Association="Proje_EtkinlikModel.Store.FK_Etkinlik_Sanatci">
-      <End Role="Sanatci" EntitySet="Sanatci" />
-      <End Role="Etkinlik" EntitySet="Etkinlik" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Mekan_Sehir" Association="Proje_EtkinlikModel.Store.FK_Mekan_Sehir">
-      <End Role="Sehir" EntitySet="Sehir" />
-      <End Role="Mekan" EntitySet="Mekan" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Sahne_Mekan" Association="Proje_EtkinlikModel.Store.FK_Sahne_Mekan">
-      <End Role="Mekan" EntitySet="Mekan" />
-      <End Role="Sahne" EntitySet="Sahne" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Uye_Sehir" Association="Proje_EtkinlikModel.Store.FK_Uye_Sehir">
-      <End Role="Sehir" EntitySet="Sehir" />
-      <End Role="Uye" EntitySet="Uye" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="AltKategori">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="KategoriId" Type="int" Nullable="true" />
-    <Property Name="AltKategoriAd" Type="nvarchar" Nullable="true" MaxLength="100" />
-  </EntityType>
-  <EntityType Name="Etkinlik">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="EtkinlikAd" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="MekanId" Type="int" Nullable="true" />
-    <Property Name="AltKategoriId" Type="int" Nullable="true" />
-    <Property Name="Tarih" Type="datetime" Nullable="true" />
-    <Property Name="Aciklama" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="SanatciId" Type="int" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Kategori">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="KategoriAd" Type="nchar" Nullable="true" MaxLength="30" />
-  </EntityType>
-  <EntityType Name="Mekan">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="MekanAd" Type="nvarchar" Nullable="false" MaxLength="200" />
-    <Property Name="MekanKonum" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="MekanFoto" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="MekanSehir" Type="int" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Sahne">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="MekanId" Type="int" Nullable="true" />
-    <Property Name="KisiSayısı" Type="int" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Sanatci">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="AdSoyad" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="Foto" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="Aciklama" Type="nvarchar" Nullable="true" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="Sehir">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="SehirAd" Type="nchar" Nullable="true" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" Nullable="true" />
-    <Property Name="definition" Type="varbinary(max)" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Uye">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="AdSoyad" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="SehirId" Type="int" Nullable="true" />
-    <Property Name="Telefon" Type="nchar" Nullable="true" MaxLength="10" />
-    <Property Name="Yas" Type="int" Nullable="true" />
-    <Property Name="Email" Type="nchar" Nullable="true" MaxLength="50" />
-    <Property Name="Sifre" Type="nchar" Nullable="true" MaxLength="40" />
-    <Property Name="Yetki" Type="nchar" Nullable="true" MaxLength="10" />
-  </EntityType>
-  <EntityType Name="Menu">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="MenuAd" Type="nchar" Nullable="true" MaxLength="30" />
-    <Property Name="MenuAdres" Type="nchar" Nullable="true" MaxLength="50" />
-    <Property Name="Yetki" Type="nchar" Nullable="true" MaxLength="15" />
-  </EntityType>
-  <Association Name="FK_AltKategori_Kategori">
-    <End Role="Kategori" Type="Proje_EtkinlikModel.Store.Kategori" Multiplicity="0..1" />
-    <End Role="AltKategori" Type="Proje_EtkinlikModel.Store.AltKategori" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Kategori">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="AltKategori">
-        <PropertyRef Name="KategoriId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Etkinlik_AltKategori">
-    <End Role="AltKategori" Type="Proje_EtkinlikModel.Store.AltKategori" Multiplicity="0..1" />
-    <End Role="Etkinlik" Type="Proje_EtkinlikModel.Store.Etkinlik" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AltKategori">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Etkinlik">
-        <PropertyRef Name="AltKategoriId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Etkinlik_Mekan">
-    <End Role="Mekan" Type="Proje_EtkinlikModel.Store.Mekan" Multiplicity="0..1" />
-    <End Role="Etkinlik" Type="Proje_EtkinlikModel.Store.Etkinlik" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Mekan">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Etkinlik">
-        <PropertyRef Name="MekanId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Etkinlik_Sanatci">
-    <End Role="Sanatci" Type="Proje_EtkinlikModel.Store.Sanatci" Multiplicity="0..1" />
-    <End Role="Etkinlik" Type="Proje_EtkinlikModel.Store.Etkinlik" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Sanatci">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Etkinlik">
-        <PropertyRef Name="SanatciId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Mekan_Sehir">
-    <End Role="Sehir" Type="Proje_EtkinlikModel.Store.Sehir" Multiplicity="0..1" />
-    <End Role="Mekan" Type="Proje_EtkinlikModel.Store.Mekan" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Sehir">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Mekan">
-        <PropertyRef Name="MekanSehir" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Sahne_Mekan">
-    <End Role="Mekan" Type="Proje_EtkinlikModel.Store.Mekan" Multiplicity="0..1" />
-    <End Role="Sahne" Type="Proje_EtkinlikModel.Store.Sahne" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Mekan">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Sahne">
-        <PropertyRef Name="MekanId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Uye_Sehir">
-    <End Role="Sehir" Type="Proje_EtkinlikModel.Store.Sehir" Multiplicity="0..1" />
-    <End Role="Uye" Type="Proje_EtkinlikModel.Store.Uye" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Sehir">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Uye">
-        <PropertyRef Name="SehirId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-</Schema></edmx:StorageModels>
+    <Schema Namespace="Proje_EtkinlikModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AltKategori">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="KategoriId" Type="int" />
+          <Property Name="AltKategoriAd" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Etkinlik">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="EtkinlikAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="MekanId" Type="int" />
+          <Property Name="AltKategoriId" Type="int" />
+          <Property Name="Tarih" Type="datetime" />
+          <Property Name="Aciklama" Type="nvarchar(max)" />
+          <Property Name="SanatciId" Type="int" />
+        </EntityType>
+        <EntityType Name="Kategori">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="KategoriAd" Type="nchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Mekan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="MekanAd" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="MekanKonum" Type="nvarchar(max)" />
+          <Property Name="MekanFoto" Type="nvarchar(max)" />
+          <Property Name="MekanSehir" Type="int" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MenuAd" Type="nchar" MaxLength="30" />
+          <Property Name="MenuAdres" Type="nchar" MaxLength="50" />
+          <Property Name="Yetki" Type="nchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Sahne">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="MekanId" Type="int" />
+          <Property Name="KisiSayısı" Type="int" />
+        </EntityType>
+        <EntityType Name="Sanatci">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="Foto" Type="nvarchar" MaxLength="50" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sehir">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="SehirAd" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Uye">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="varchar" MaxLength="50" />
+          <Property Name="SehirId" Type="int" />
+          <Property Name="Telefon" Type="varchar" MaxLength="50" />
+          <Property Name="Yas" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Sifre" Type="varchar" MaxLength="50" />
+          <Property Name="Yetki" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_AltKategori_Kategori">
+          <End Role="Kategori" Type="Self.Kategori" Multiplicity="0..1" />
+          <End Role="AltKategori" Type="Self.AltKategori" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategori">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AltKategori">
+              <PropertyRef Name="KategoriId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Etkinlik_AltKategori">
+          <End Role="AltKategori" Type="Self.AltKategori" Multiplicity="0..1" />
+          <End Role="Etkinlik" Type="Self.Etkinlik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AltKategori">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Etkinlik">
+              <PropertyRef Name="AltKategoriId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Etkinlik_Mekan">
+          <End Role="Mekan" Type="Self.Mekan" Multiplicity="0..1" />
+          <End Role="Etkinlik" Type="Self.Etkinlik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mekan">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Etkinlik">
+              <PropertyRef Name="MekanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Etkinlik_Sanatci">
+          <End Role="Sanatci" Type="Self.Sanatci" Multiplicity="0..1" />
+          <End Role="Etkinlik" Type="Self.Etkinlik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sanatci">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Etkinlik">
+              <PropertyRef Name="SanatciId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mekan_Sehir">
+          <End Role="Sehir" Type="Self.Sehir" Multiplicity="0..1" />
+          <End Role="Mekan" Type="Self.Mekan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sehir">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Mekan">
+              <PropertyRef Name="MekanSehir" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sahne_Mekan">
+          <End Role="Mekan" Type="Self.Mekan" Multiplicity="0..1" />
+          <End Role="Sahne" Type="Self.Sahne" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mekan">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Sahne">
+              <PropertyRef Name="MekanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Proje_EtkinlikModelStoreContainer">
+          <EntitySet Name="AltKategori" EntityType="Self.AltKategori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Etkinlik" EntityType="Self.Etkinlik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kategori" EntityType="Self.Kategori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mekan" EntityType="Self.Mekan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sahne" EntityType="Self.Sahne" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sanatci" EntityType="Self.Sanatci" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sehir" EntityType="Self.Sehir" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Uye" EntityType="Self.Uye" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AltKategori_Kategori" Association="Self.FK_AltKategori_Kategori">
+            <End Role="Kategori" EntitySet="Kategori" />
+            <End Role="AltKategori" EntitySet="AltKategori" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Etkinlik_AltKategori" Association="Self.FK_Etkinlik_AltKategori">
+            <End Role="AltKategori" EntitySet="AltKategori" />
+            <End Role="Etkinlik" EntitySet="Etkinlik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Etkinlik_Mekan" Association="Self.FK_Etkinlik_Mekan">
+            <End Role="Mekan" EntitySet="Mekan" />
+            <End Role="Etkinlik" EntitySet="Etkinlik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Etkinlik_Sanatci" Association="Self.FK_Etkinlik_Sanatci">
+            <End Role="Sanatci" EntitySet="Sanatci" />
+            <End Role="Etkinlik" EntitySet="Etkinlik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mekan_Sehir" Association="Self.FK_Mekan_Sehir">
+            <End Role="Sehir" EntitySet="Sehir" />
+            <End Role="Mekan" EntitySet="Mekan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sahne_Mekan" Association="Self.FK_Sahne_Mekan">
+            <End Role="Mekan" EntitySet="Mekan" />
+            <End Role="Sahne" EntitySet="Sahne" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Proje_EtkinlikModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -244,7 +228,7 @@
           <Property Name="EtkinlikAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MekanId" Type="Int32" />
           <Property Name="AltKategoriId" Type="Int32" />
-          <Property Name="Tarih" Type="DateTime" Precision="0" />
+          <Property Name="Tarih" Type="DateTime" Precision="3" />
           <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="SanatciId" Type="Int32" />
           <NavigationProperty Name="AltKategori" Relationship="Self.FK_Etkinlik_AltKategori" FromRole="Etkinlik" ToRole="AltKategori" />
@@ -298,7 +282,6 @@
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="SehirAd" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Mekan" Relationship="Self.FK_Mekan_Sehir" FromRole="Sehir" ToRole="Mekan" />
-          <NavigationProperty Name="Uye" Relationship="Proje_EtkinlikModel.FK_Uye_Sehir" FromRole="Sehir" ToRole="Uye" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -445,12 +428,8 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
-          <EntitySet Name="Uye" EntityType="Proje_EtkinlikModel.Uye" />
-          <AssociationSet Name="FK_Uye_Sehir" Association="Proje_EtkinlikModel.FK_Uye_Sehir">
-            <End Role="Sehir" EntitySet="Sehir" />
-            <End Role="Uye" EntitySet="Uye" />
-          </AssociationSet>
           <EntitySet Name="Menu" EntityType="Proje_EtkinlikModel.Menu" />
+          <EntitySet Name="Uye" EntityType="Proje_EtkinlikModel.Uye" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -463,32 +442,6 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
-        <EntityType Name="Uye">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SehirId" Type="Int32" />
-          <Property Name="Telefon" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Yas" Type="Int32" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="Sifre" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Sehir" Relationship="Proje_EtkinlikModel.FK_Uye_Sehir" FromRole="Uye" ToRole="Sehir" />
-          <Property Name="Yetki" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-        </EntityType>
-        <Association Name="FK_Uye_Sehir">
-          <End Type="Proje_EtkinlikModel.Sehir" Role="Sehir" Multiplicity="0..1" />
-          <End Type="Proje_EtkinlikModel.Uye" Role="Uye" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Sehir">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Uye">
-              <PropertyRef Name="SehirId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Menu">
           <Key>
             <PropertyRef Name="id" />
@@ -497,6 +450,19 @@
           <Property Name="MenuAd" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
           <Property Name="MenuAdres" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="Yetki" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Uye">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SehirId" Type="Int32" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Yas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Yetki" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -583,20 +549,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Uye">
-      <EntityTypeMapping TypeName="IsTypeOf(Proje_EtkinlikModel.Uye)">
-        <MappingFragment StoreEntitySet="Uye">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
-          <ScalarProperty Name="SehirId" ColumnName="SehirId" />
-          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
-          <ScalarProperty Name="Yas" ColumnName="Yas" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
-          <ScalarProperty Name="Yetki" ColumnName="Yetki" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Menu">
       <EntityTypeMapping TypeName="IsTypeOf(Proje_EtkinlikModel.Menu)">
         <MappingFragment StoreEntitySet="Menu">
@@ -607,6 +559,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+          <EntitySetMapping Name="Uye">
+            <EntityTypeMapping TypeName="Proje_EtkinlikModel.Uye">
+              <MappingFragment StoreEntitySet="Uye">
+                <ScalarProperty Name="Yetki" ColumnName="Yetki" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Yas" ColumnName="Yas" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="SehirId" ColumnName="SehirId" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

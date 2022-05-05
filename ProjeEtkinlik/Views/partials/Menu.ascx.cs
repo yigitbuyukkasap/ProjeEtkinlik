@@ -27,6 +27,7 @@ namespace ProjeEtkinlik.Views.partials
 
         private void ListingMenu(List<Proje.Etkinlik.Data.Menu> menu)
         {
+            lt_menu.Text = "";
             string str = "";
 
             for (int i = 0; i < menu.Count; i++)

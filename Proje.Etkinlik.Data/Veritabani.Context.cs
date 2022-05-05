@@ -35,8 +35,8 @@ namespace Proje.Etkinlik.Data
         public virtual DbSet<Sanatci> Sanatci { get; set; }
         public virtual DbSet<Sehir> Sehir { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Uye> Uye { get; set; }
         public virtual DbSet<Menu> Menu { get; set; }
+        public virtual DbSet<Uye> Uye { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

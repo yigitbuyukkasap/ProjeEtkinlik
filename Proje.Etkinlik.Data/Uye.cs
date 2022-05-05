@@ -18,11 +18,9 @@ namespace Proje.Etkinlik.Data
         public string AdSoyad { get; set; }
         public Nullable<int> SehirId { get; set; }
         public string Telefon { get; set; }
-        public Nullable<int> Yas { get; set; }
+        public string Yas { get; set; }
         public string Email { get; set; }
         public string Sifre { get; set; }
         public string Yetki { get; set; }
-    
-        public virtual Sehir Sehir { get; set; }
     }
 }

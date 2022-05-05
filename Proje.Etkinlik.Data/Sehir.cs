@@ -18,7 +18,6 @@ namespace Proje.Etkinlik.Data
         public Sehir()
         {
             this.Mekan = new HashSet<Mekan>();
-            this.Uye = new HashSet<Uye>();
         }
     
         public int id { get; set; }
@@ -26,7 +25,5 @@ namespace Proje.Etkinlik.Data
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Mekan> Mekan { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Uye> Uye { get; set; }
     }
 }
