@@ -19,11 +19,11 @@ namespace Proje.Etkinlik.API
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-            config.Routes.MapHttpRoute(
-                name: "User",
-                routeTemplate: "{controller}/{email}",
-                defaults: new { email = RouteParameter.Optional }
-            );
+            //config.Routes.MapHttpRoute(
+            //    name: "User",
+            //    routeTemplate: "{controller}/{actionName}/{email}",
+            //    defaults: new { email = RouteParameter.Optional  }
+            //);
         }
     }
 }

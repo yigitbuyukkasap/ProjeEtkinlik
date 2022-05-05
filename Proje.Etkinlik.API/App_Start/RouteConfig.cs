@@ -7,6 +7,7 @@ using System.Web.Routing;
 
 namespace Proje.Etkinlik.API
 {
+
     public class RouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)
@@ -20,8 +21,8 @@ namespace Proje.Etkinlik.API
             );
             routes.MapRoute(
                 name: "User",
-                url: "{controller}/{email}",
-                defaults: new { email = UrlParameter.Optional }
+                url: "{controller}/{action}/{email}",
+                defaults: new { email = UrlParameter.Optional}
             );
         }
     }
