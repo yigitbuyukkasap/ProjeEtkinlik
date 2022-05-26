@@ -25,6 +25,7 @@ namespace ProjeEtkinlik
 
             if (response.IsSuccessStatusCode)
             {
+                
                 var user = JsonConvert.DeserializeObject(await response.Content.ReadAsStringAsync());
                 return user;
             }

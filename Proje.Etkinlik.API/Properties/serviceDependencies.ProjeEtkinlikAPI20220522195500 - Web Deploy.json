@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/projeetkinlikapi/databases/Proje.Etkinlik.API_db",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:Proje_EtkinlikEntities",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}

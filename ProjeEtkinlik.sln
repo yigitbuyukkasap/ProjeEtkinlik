@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proje.Etkinlik.Data", "Proj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proje.Etkinlik.Repository", "Proje.Etkinlik.Repository\Proje.Etkinlik.Repository.csproj", "{2130254F-0404-41F6-AAD6-E32762B6D605}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proje.Etkinlik.API", "Proje.Etkinlik.API\Proje.Etkinlik.API.csproj", "{2B6CE4B8-68DB-4E52-A269-48A38EEDCBD0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjeEtkinlikAPI", "Proje.Etkinlik.API\ProjeEtkinlikAPI.csproj", "{2B6CE4B8-68DB-4E52-A269-48A38EEDCBD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
